@@ -1,16 +1,13 @@
 
-import './App.css'
+import Home from './components/Home';
 
-function App() {
- 
-
+const App = () => {
   return (
-
-      <div>
-      
-      </div>
-
-  )
+    <div className="App">
+      <h1>Bank of Flatiron</h1>
+      <Home />
+    </div>
+  );
 }
 
-export default App
+export default App;
