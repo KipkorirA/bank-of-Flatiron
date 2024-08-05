@@ -1,0 +1,57 @@
+/* Basic container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Header styling */
+  header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Transaction list styling */
+  .transaction-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .transaction-list > div {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .transaction-list > div > div {
+    flex: 1;
+    padding: 0 10px;
+  }
+  
