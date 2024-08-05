@@ -12,14 +12,14 @@ const Home = () => {
   const [sortOption, setSortOption] = useState('date');
 
   useEffect(() => {
-    fetch("http://localhost:3000/transactions")
+    fetch("https://staff-backend-n4rx.vercel.app/transactions")
       .then(res => res.json())
       .then(data => setTransactions(data))
       .catch(error => console.log(error));
   }, []);
 
   const addTransaction = (newTransaction) => {
-    fetch("http://localhost:3000/transactions", {
+    fetch("https://staff-backend-n4rx.vercel.app/transactions", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ const Home = () => {
   };
 
   const deleteTransaction = (id) => {
-    fetch(`http://localhost:3000/transactions/${id}`, {
+    fetch(`https://staff-backend-n4rx.vercel.app/transactions/${id}`, {
       method: 'DELETE',
     })
       .then(() => setTransactions(transactions.filter(transaction => transaction.id !== id)))
