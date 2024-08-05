@@ -32,7 +32,7 @@ const Home = () => {
   };
 
   const deleteTransaction = (id) => {
-    fetch(`http://localhost:3001/transactions/${id}`, {
+    fetch(`http://localhost:3000/transactions/${id}`, {
       method: 'DELETE',
     })
       .then(() => setTransactions(transactions.filter(transaction => transaction.id !== id)))
@@ -49,11 +49,11 @@ const Home = () => {
     } else if (sortOption === 'description') {
       return a.description.localeCompare(b.description);
     } else {
-      return new Date(a.date) - new Date(b.date); // Default to date sorting
+      return new Date(a.date) - new Date(b.date); 
     }
   });
 
-  const filteredTransactions = transactions.filter(transaction =>
+  const filteredTransactions = sortedTransactions.filter(transaction =>
     transaction.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 

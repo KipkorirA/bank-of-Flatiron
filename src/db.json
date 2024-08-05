@@ -83,13 +83,6 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
-    },
-    {
-      "id": "469a",
-      "date": "2024-07-30",
-      "description": "Fuliza",
-      "category": "debt",
-      "amount": 4000
     }
   ]
 }
