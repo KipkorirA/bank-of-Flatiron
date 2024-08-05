@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import TransactionList from './TransactionList';
 import TransactionForm from './TransactionForm';
 import Search from './Search';
+import Sort from './Sort';
 
 
 const Home = () => {
   const [transactions, setTransactions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortOption, setSortOption] = useState('date');
 
   useEffect(() => {
     fetch("http://localhost:3000/transactions")
@@ -36,6 +38,20 @@ const Home = () => {
       .catch(error => console.log(error));
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
+  const sortedTransactions = [...transactions].sort((a, b) => {
+    if (sortOption === 'category') {
+      return a.category.localeCompare(b.category);
+    } else if (sortOption === 'description') {
+      return a.description.localeCompare(b.description);
+    } else {
+      return new Date(a.date) - new Date(b.date); // Default to date sorting
+    }
+  });
+
   const filteredTransactions = transactions.filter(transaction =>
     transaction.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -45,6 +61,7 @@ const Home = () => {
       <header>Bank of Flatiron</header>
       <TransactionForm addTransaction={addTransaction} />
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <Sort sortOption={sortOption} onSortChange={handleSortChange} />
       <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
     </div>
   );
