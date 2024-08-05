@@ -1,9 +1,9 @@
-
+import React from 'react';
 import Transaction from './Transaction';
 
-const TransactionList = ({ transactions }) => {
+const TransactionList = ({ transactions, onDelete }) => {
   const transactionItems = transactions.map(transaction => (
-    <Transaction key={transaction.id} transaction={transaction} />
+    <Transaction key={transaction.id} transaction={transaction} onDelete={onDelete} />
   ));
 
   return (
@@ -17,6 +17,6 @@ const TransactionList = ({ transactions }) => {
       {transactionItems}
     </div>
   );
-}
+};
 
 export default TransactionList;

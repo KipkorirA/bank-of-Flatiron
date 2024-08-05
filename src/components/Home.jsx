@@ -3,6 +3,7 @@ import TransactionList from './TransactionList';
 import TransactionForm from './TransactionForm';
 import Search from './Search';
 
+
 const Home = () => {
   const [transactions, setTransactions] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,18 +27,27 @@ const Home = () => {
       .then(data => setTransactions([...transactions, data]))
       .catch(error => console.log(error));
   };
+
+  const deleteTransaction = (id) => {
+    fetch(`http://localhost:3001/transactions/${id}`, {
+      method: 'DELETE',
+    })
+      .then(() => setTransactions(transactions.filter(transaction => transaction.id !== id)))
+      .catch(error => console.log(error));
+  };
+
   const filteredTransactions = transactions.filter(transaction =>
     transaction.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div>
-        <header>Bank of Flatiron</header>
+      <header>Bank of Flatiron</header>
       <TransactionForm addTransaction={addTransaction} />
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <TransactionList transactions={transactions} />
+      <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
     </div>
   );
-}
+};
 
 export default Home;
