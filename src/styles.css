@@ -1,0 +1,119 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 0  100px;
+}
+
+
+header {
+  background-color: #4CAF50;
+  color: rgb(240, 229, 229);
+  padding: 10px 0;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  margin: 20px;
+}
+
+.transaction-header {
+  display: flex;
+  background-color: #0d0741;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.transaction-cell {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.transaction-cell:nth-child(4) {
+  text-align: right;
+}
+
+
+.transaction-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: rgb(226, 216, 216);
+}
+
+.transaction-item:nth-child(even) {
+  background-color: #033042;
+}
+
+.transaction-item:hover {
+  background-color: #eaeaea;
+  color: #0d0741;
+}
+
+
+.transaction-button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.transaction-button:hover {
+  background-color: #e60000;
+}
+
+.sort-container {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #061d30;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.sort-select:focus {
+  border-color: #4CAF50;
+}
+
+.sort-container label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.search-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4CAF50;
+}

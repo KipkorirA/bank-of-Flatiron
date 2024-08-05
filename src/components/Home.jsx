@@ -3,6 +3,7 @@ import TransactionList from './TransactionList';
 import TransactionForm from './TransactionForm';
 import Search from './Search';
 import Sort from './Sort';
+import '../styles.css'
 
 
 const Home = () => {
@@ -58,12 +59,12 @@ const Home = () => {
 
   return (
     <div>
-      <header>Bank of Flatiron</header>
-      <TransactionForm addTransaction={addTransaction} />
-      <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <Sort sortOption={sortOption} onSortChange={handleSortChange} />
-      <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
-    </div>
+    <header>Bank of Flatiron</header>
+    <TransactionForm addTransaction={addTransaction} />
+    <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+    <Sort sortOption={sortOption} onSortChange={handleSortChange} />
+    <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
+  </div>
   );
 };
 

@@ -7,12 +7,13 @@ const TransactionList = ({ transactions, onDelete }) => {
   ));
 
   return (
-    <div>
-      <div>
-        <div>Date</div>
-        <div>Description</div>
-        <div>Category</div>
-        <div>Amount</div>
+      <div className="transaction-container">
+      <div className="transaction-header">
+        <div className="transaction-cell">Date</div>
+        <div className="transaction-cell">Description</div>
+        <div className="transaction-cell">Category</div>
+        <div className="transaction-cell">Amount</div>
+        <div className="transaction-cell">Actions</div>
       </div>
       {transactionItems}
     </div>
