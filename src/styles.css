@@ -25,7 +25,7 @@ header {
 
 .transaction-header {
   display: flex;
-  background-color: #0d0741;
+  background-color: #e9f3bb;
   padding: 10px;
   border-bottom: 1px solid #ddd;
   font-weight: bold;
@@ -85,6 +85,7 @@ header {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #061d30;
+  color: #ddd;
   outline: none;
   transition: border-color 0.3s ease;
 }

@@ -9,7 +9,7 @@ import '../styles.css'
 const Home = () => {
   const [transactions, setTransactions] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
-  const [sortOption, setSortOption] = useState('date')
+  const [sortOption, setSortOption] = useState('')
   const [showTransactions, setShowTransactions] = useState(false)
 
   useEffect(() => {
