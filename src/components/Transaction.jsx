@@ -10,7 +10,7 @@ const Transaction = ({ transaction, onDelete }) => {
         <button className="transaction-button" onClick={() => onDelete(transaction.id)}>Delete</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Transaction;
+export default Transaction

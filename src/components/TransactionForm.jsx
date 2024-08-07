@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const TransactionForm = ({ addTransaction }) => {
-  const [date, setDate] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('');
-  const [amount, setAmount] = useState('');
+  const [date, setDate] = useState('')
+  const [description, setDescription] = useState('')
+  const [category, setCategory] = useState('')
+  const [amount, setAmount] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,11 +14,11 @@ const TransactionForm = ({ addTransaction }) => {
       category,
       amount: parseFloat(amount),
     };
-    addTransaction(newTransaction);
-    setDate('');
-    setDescription('');
-    setCategory('');
-    setAmount('');
+    addTransaction(newTransaction)
+    setDate('')
+    setDescription('')
+    setCategory('')
+    setAmount('')
   };
 
   return (
@@ -29,7 +29,7 @@ const TransactionForm = ({ addTransaction }) => {
       <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" required/>
       <button type="submit">Add Transaction</button>
     </form>
-  );
+  )
 }
 
-export default TransactionForm;
+export default TransactionForm

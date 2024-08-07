@@ -1,10 +1,10 @@
 
-import Transaction from './Transaction';
+import Transaction from './Transaction'
 
 const TransactionList = ({ transactions, onDelete }) => {
   const transactionItems = transactions.map(transaction => (
     <Transaction key={transaction.id} transaction={transaction} onDelete={onDelete} />
-  ));
+  ))
 
   return (
       <div className="transaction-container">
@@ -17,7 +17,7 @@ const TransactionList = ({ transactions, onDelete }) => {
       </div>
       {transactionItems}
     </div>
-  );
-};
+  )
+}
 
-export default TransactionList;
+export default TransactionList

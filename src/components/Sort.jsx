@@ -6,7 +6,7 @@ const Sort = ({ sortOption, onSortChange }) => {
       <option value="category">Sort by Category</option>
       <option value="description">Sort by Description</option>
     </select>
-  );
-};
+  )
+}
 
-export default Sort;
+export default Sort
