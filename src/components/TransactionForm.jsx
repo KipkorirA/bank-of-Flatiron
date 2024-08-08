@@ -22,7 +22,7 @@ const TransactionForm = ({ addTransaction }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-header" onSubmit={handleSubmit}>
       <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required/>
       <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" required/>
       <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder="Category" required />

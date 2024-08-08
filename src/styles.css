@@ -13,6 +13,8 @@ header {
   padding: 10px 0;
   text-align: center;
   font-size: 24px;
+  border-radius: 10px;
+  box-shadow: inset 2px -2px 2px rgb(219, 194, 83);
 }
 
 
@@ -34,7 +36,13 @@ header {
 .transaction-cell {
   flex: 1;
   padding: 10px;
-  text-align: left;
+  text-align: center;
+}
+
+.show-transactions{
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .transaction-cell:nth-child(4) {
@@ -80,7 +88,7 @@ header {
 }
 
 .sort-select {
-  padding: 8px;
+  padding: 4px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -88,6 +96,7 @@ header {
   color: #ddd;
   outline: none;
   transition: border-color 0.3s ease;
+  margin: 0 10px;
 }
 
 .sort-select:focus {
@@ -106,16 +115,24 @@ header {
 }
 
 .search-input {
-  padding: 8px;
-  font-size: 16px;
+  padding: 4px;
+  font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
   max-width: 300px;
   outline: none;
   transition: border-color 0.3s ease;
+  margin: 0 10px;
 }
 
 .search-input:focus {
   border-color: #4CAF50;
+}
+
+.form-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  width: 100;
 }

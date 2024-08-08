@@ -19,6 +19,13 @@ const Home = () => {
       .catch(error => console.log(error))
   }, []);
 
+  const fetchTransactions = () => {
+    fetch("https://staff-backend-n4rx.vercel.app/transactions")
+      .then(res => res.json())
+      .then(data => setTransactions(data))
+      .catch(error => console.log(error));
+  };
+
   const addTransaction = (newTransaction) => {
     fetch("https://staff-backend-n4rx.vercel.app/transactions", {
       method: 'POST',
@@ -28,7 +35,7 @@ const Home = () => {
       body: JSON.stringify(newTransaction),
     })
       .then(res => res.json())
-      .then(data => setTransactions([...transactions, data]))
+      .then(() => {fetchTransactions()})
       .catch(error => console.log(error))
   };
 
@@ -62,11 +69,11 @@ const Home = () => {
     <div>
     <header>Bank of Flatiron</header>
     <TransactionForm addTransaction={addTransaction} />
-    <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-    <Sort sortOption={sortOption} onSortChange={handleSortChange} />
-    <button onClick={() => setShowTransactions(!showTransactions)}>
+    <button className='show-transactions' onClick={() => setShowTransactions(!showTransactions)}>
       {showTransactions? 'Hide Transactions History' : 'Show Transactions History'}
     </button>
+    <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+    <Sort sortOption={sortOption} onSortChange={handleSortChange} />
     {showTransactions &&( 
        <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
     )
