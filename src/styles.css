@@ -136,3 +136,8 @@ header {
   padding: 8px;
   width: 100;
 }
+
+.clock{
+  color: #eaeaea;
+  text-align: center;
+}

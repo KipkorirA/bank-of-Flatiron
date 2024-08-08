@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import TransactionList from './TransactionList'
 import TransactionForm from './TransactionForm'
+import Clock from './Clock'
 import Search from './Search'
 import Sort from './Sort'
 import '../styles.css'
@@ -76,9 +77,8 @@ const Home = () => {
     <Sort sortOption={sortOption} onSortChange={handleSortChange} />
     {showTransactions &&( 
        <TransactionList transactions={filteredTransactions} onDelete={deleteTransaction} />
-    )
-         
-    }
+    )}   
+    <Clock /> 
  </div>
   )
 }
