@@ -42,7 +42,7 @@ Welcome to the Bank of Flatiron application, a simple React app for managing tra
 4. **Start the development server**:
 
    ```bash
-   npm start
+   npm run dev
    ```
    This will start the application and open it in your default web browser.
 
